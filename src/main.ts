@@ -4,8 +4,8 @@ type Link = {
 };
 
 const links: Link[] = [
-  { label: "GitHub", href: "https://github.com/YOUR_USERNAME" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/YOUR_PROFILE" },
+  { label: "GitHub", href: "https://github.com/jacovaneeden" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/jaco-van-eeden-0010a0194/" },
   { label: "Email Me", href: "mailto:you@example.com" },
   { label: "Download CV", href: "/cv.pdf" },
   { label: "About Me", href: "/about.html" }
