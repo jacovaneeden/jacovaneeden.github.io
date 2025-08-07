@@ -1,24 +1,26 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+type Link = {
+  label: string;
+  href: string;
+};
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const links: Link[] = [
+  { label: "GitHub", href: "https://github.com/YOUR_USERNAME" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/YOUR_PROFILE" },
+  { label: "Email Me", href: "mailto:you@example.com" },
+  { label: "Download CV", href: "/cv.pdf" },
+  { label: "About Me", href: "/about.html" }
+];
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const list = document.getElementById("link-list");
+
+if (list) {
+  links.forEach((link) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = link.href;
+    a.textContent = link.label;
+    a.target = "_blank";
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+}
